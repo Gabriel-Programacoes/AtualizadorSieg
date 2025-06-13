@@ -1,0 +1,2 @@
+chrome_standalone/** filter=lfs diff=lfs merge=lfs -text
+

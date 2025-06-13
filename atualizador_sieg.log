@@ -1,0 +1,285 @@
+2025-06-11 10:21:47,414 - INFO - [main.py:136] - =====================================================================
+2025-06-11 10:21:47,414 - INFO - [main.py:137] - Aplicação Atualizador SIEG iniciada e logger configurado.
+2025-06-11 10:21:47,414 - INFO - [main.py:138] - Caminho do arquivo de log: C:\Users\Ti-03\Desktop\Codigos\Atualizador Sieg\Atualizador Sieg (Versão Final)\atualizador_sieg.log
+2025-06-11 10:21:47,415 - INFO - [main.py:84] - Credenciais do arquivo .env carregadas com sucesso.
+2025-06-11 10:21:47,419 - DEBUG - [main.py:145] - Ícone da janela definido com sucesso.
+2025-06-11 10:21:47,506 - INFO - [main.py:108] - Interface do usuário (UI) configurada e pronta.
+2025-06-11 10:21:47,506 - INFO - [main.py:872] - Iniciando o mainloop da aplicação.
+2025-06-11 10:21:53,096 - INFO - [main.py:386] - Iniciando processo de automação para 1 empresa(s) válidas: 1668
+2025-06-11 10:21:53,098 - INFO - [main.py:422] - Thread de automação iniciada para 1 códigos.
+2025-06-11 10:21:53,098 - DEBUG - [main.py:406] - Thread de automação Selenium iniciada.
+2025-06-11 10:21:53,098 - INFO - [main.py:453] - Tentando iniciar o navegador Chrome...
+2025-06-11 10:21:53,099 - INFO - [main.py:479] - Modo Headless desativado (navegador visível).
+2025-06-11 10:21:54,177 - INFO - [main.py:483] - Navegador Chrome iniciado com sucesso.
+2025-06-11 10:21:54,177 - INFO - [main.py:499] - Iniciando processo de login no Sieg Hub...
+2025-06-11 10:21:56,535 - DEBUG - [main.py:502] - Timeout para elementos da página: 30 segundos.
+2025-06-11 10:21:56,536 - CRITICAL - [main.py:439] - O navegador ou o driver foi encerrado inesperadamente durante a operação.
+Traceback (most recent call last):
+  File "C:\Users\Ti-03\Desktop\Codigos\Atualizador Sieg\Atualizador Sieg (Versão Final)\main.py", line 504, in perform_login
+    self.navegador.find_element(By.ID, 'txtEmail').send_keys(self.email)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\webdriver.py", line 898, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=128.0.6613.86)
+
+Stacktrace:
+	GetHandleVerifier [0x00007FF7E31CB632+29090]
+	(No symbol) [0x00007FF7E313E6E9]
+	(No symbol) [0x00007FF7E2FFB1CA]
+	(No symbol) [0x00007FF7E2FCFAF5]
+	(No symbol) [0x00007FF7E307E2E7]
+	(No symbol) [0x00007FF7E3095EE1]
+	(No symbol) [0x00007FF7E3076493]
+	(No symbol) [0x00007FF7E30409B1]
+	(No symbol) [0x00007FF7E3041B11]
+	GetHandleVerifier [0x00007FF7E34E883D+3294125]
+	GetHandleVerifier [0x00007FF7E3534423+3604371]
+	GetHandleVerifier [0x00007FF7E352A2E7+3563095]
+	GetHandleVerifier [0x00007FF7E3286F16+797318]
+	(No symbol) [0x00007FF7E314986F]
+	(No symbol) [0x00007FF7E3145454]
+	(No symbol) [0x00007FF7E31455E0]
+	(No symbol) [0x00007FF7E3134A7F]
+	BaseThreadInitThunk [0x00007FFB9F0AE8D7+23]
+	RtlUserThreadStart [0x00007FFBA0AFC34C+44]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ti-03\Desktop\Codigos\Atualizador Sieg\Atualizador Sieg (Versão Final)\main.py", line 428, in run_selenium_automation_thread
+    if self.perform_login():
+       ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ti-03\Desktop\Codigos\Atualizador Sieg\Atualizador Sieg (Versão Final)\main.py", line 520, in perform_login
+    f"Falha durante o processo de login no Sieg Hub. URL final: {self.navegador.current_url if self.navegador else 'N/A'}",
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\webdriver.py", line 560, in current_url
+    return self.execute(Command.GET_CURRENT_URL)["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=128.0.6613.86)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7E31CB632+29090]
+	(No symbol) [0x00007FF7E313E6E9]
+	(No symbol) [0x00007FF7E2FFB1CA]
+	(No symbol) [0x00007FF7E2FCFAF5]
+	(No symbol) [0x00007FF7E307E2E7]
+	(No symbol) [0x00007FF7E3095EE1]
+	(No symbol) [0x00007FF7E3076493]
+	(No symbol) [0x00007FF7E30409B1]
+	(No symbol) [0x00007FF7E3041B11]
+	GetHandleVerifier [0x00007FF7E34E883D+3294125]
+	GetHandleVerifier [0x00007FF7E3534423+3604371]
+	GetHandleVerifier [0x00007FF7E352A2E7+3563095]
+	GetHandleVerifier [0x00007FF7E3286F16+797318]
+	(No symbol) [0x00007FF7E314986F]
+	(No symbol) [0x00007FF7E3145454]
+	(No symbol) [0x00007FF7E31455E0]
+	(No symbol) [0x00007FF7E3134A7F]
+	BaseThreadInitThunk [0x00007FFB9F0AE8D7+23]
+	RtlUserThreadStart [0x00007FFBA0AFC34C+44]
+
+2025-06-11 10:21:56,540 - INFO - [main.py:445] - Rotina de limpeza da thread iniciada.
+2025-06-11 10:21:56,540 - INFO - [main.py:753] - Iniciando rotina de limpeza final...
+2025-06-11 10:21:56,540 - INFO - [main.py:800] - Pasta de certificados 'C:\Users\Ti-03\Desktop\Codigos\Atualizador Sieg\Atualizador Sieg (Versão Final)\certificados' não encontrada para limpeza.
+2025-06-11 10:21:57,426 - WARNING - [main.py:193] - Pedido de cancelamento imediato recebido do utilizador.
+2025-06-11 10:21:58,965 - INFO - [main.py:762] - Navegador Chrome fechado com sucesso.
+2025-06-11 10:21:58,965 - INFO - [main.py:800] - Pasta de certificados 'C:\Users\Ti-03\Desktop\Codigos\Atualizador Sieg\Atualizador Sieg (Versão Final)\certificados' não encontrada para limpeza.
+2025-06-11 10:21:58,965 - INFO - [main.py:773] - Tentando finalizar processos 'chromedriver.exe' remanescentes...
+2025-06-11 10:21:59,012 - INFO - [main.py:779] - Comando para finalizar 'chromedriver.exe' executado.
+2025-06-11 10:21:59,012 - INFO - [main.py:783] - Rotina de limpeza final concluída.
+2025-06-11 10:21:59,012 - INFO - [main.py:448] - Thread de automação Selenium concluída.
+2025-06-11 10:21:59,012 - INFO - [main.py:815] - Atualizando UI após conclusão do processo.
+2025-06-11 10:21:59,014 - INFO - [main.py:843] - Processo finalizado sem nenhuma pendência registrada.
+2025-06-11 10:21:59,014 - ERROR - [main.py:864] - Processo finalizado. 0 de 1 empresa(s) com sucesso (0%).
+2025-06-11 10:22:03,771 - INFO - [main.py:386] - Iniciando processo de automação para 1 empresa(s) válidas: 1668
+2025-06-11 10:22:03,772 - INFO - [main.py:422] - Thread de automação iniciada para 1 códigos.
+2025-06-11 10:22:03,772 - DEBUG - [main.py:406] - Thread de automação Selenium iniciada.
+2025-06-11 10:22:03,772 - INFO - [main.py:453] - Tentando iniciar o navegador Chrome...
+2025-06-11 10:22:03,773 - INFO - [main.py:477] - Modo Headless (navegador invisível) ativado.
+2025-06-11 10:22:04,805 - INFO - [main.py:483] - Navegador Chrome iniciado com sucesso.
+2025-06-11 10:22:04,806 - INFO - [main.py:499] - Iniciando processo de login no Sieg Hub...
+2025-06-11 10:22:07,667 - WARNING - [main.py:193] - Pedido de cancelamento imediato recebido do utilizador.
+2025-06-11 10:22:08,571 - DEBUG - [main.py:502] - Timeout para elementos da página: 30 segundos.
+2025-06-11 10:22:10,740 - INFO - [main.py:792] - Comando para fechar o navegador enviado para interrupção imediata.
+2025-06-11 10:22:17,831 - INFO - [main.py:792] - Comando para fechar o navegador enviado para interrupção imediata.
+2025-06-11 10:22:25,084 - CRITICAL - [main.py:442] - Erro crítico não tratado na thread de automação.
+Traceback (most recent call last):
+  File "C:\Users\Ti-03\Desktop\Codigos\Atualizador Sieg\Atualizador Sieg (Versão Final)\main.py", line 504, in perform_login
+    self.navegador.find_element(By.ID, 'txtEmail').send_keys(self.email)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\webdriver.py", line 898, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSessionIdException: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x00007FF7E31CB632+29090]
+	(No symbol) [0x00007FF7E313E6E9]
+	(No symbol) [0x00007FF7E2FFAFF9]
+	(No symbol) [0x00007FF7E30407A8]
+	(No symbol) [0x00007FF7E3041B11]
+	GetHandleVerifier [0x00007FF7E34E883D+3294125]
+	GetHandleVerifier [0x00007FF7E3534423+3604371]
+	GetHandleVerifier [0x00007FF7E352A2E7+3563095]
+	GetHandleVerifier [0x00007FF7E3286F16+797318]
+	(No symbol) [0x00007FF7E314986F]
+	(No symbol) [0x00007FF7E3145454]
+	(No symbol) [0x00007FF7E31455E0]
+	(No symbol) [0x00007FF7E3134A7F]
+	BaseThreadInitThunk [0x00007FFB9F0AE8D7+23]
+	RtlUserThreadStart [0x00007FFBA0AFC34C+44]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+        (self._dns_host, self.port), self.timeout, **extra_kw
+    )
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\util\connection.py", line 96, in create_connection
+    raise err
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\util\connection.py", line 86, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+        conn,
+    ...<5 lines>...
+        chunked=chunked,
+    )
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\http\client.py", line 1338, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\http\client.py", line 1384, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\http\client.py", line 1333, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\http\client.py", line 1093, in _send_output
+    self.send(msg)
+    ~~~~~~~~~^^^^^
+  File "C:\Program Files\Python313\Lib\http\client.py", line 1037, in send
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+        self, "Failed to establish a new connection: %s" % e
+    )
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000025FABA636B0>: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Ti-03\Desktop\Codigos\Atualizador Sieg\Atualizador Sieg (Versão Final)\main.py", line 428, in run_selenium_automation_thread
+    if self.perform_login():
+       ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ti-03\Desktop\Codigos\Atualizador Sieg\Atualizador Sieg (Versão Final)\main.py", line 520, in perform_login
+    f"Falha durante o processo de login no Sieg Hub. URL final: {self.navegador.current_url if self.navegador else 'N/A'}",
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\webdriver.py", line 560, in current_url
+    return self.execute(Command.GET_CURRENT_URL)["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\webdriver.py", line 427, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\remote_connection.py", line 404, in execute
+    return self._request(command_info[0], url, body=data)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\selenium\webdriver\remote\remote_connection.py", line 428, in _request
+    response = self._conn.request(method, url, body=body, headers=headers, timeout=self._client_config.timeout)
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\request.py", line 74, in request
+    return self.request_encode_url(
+           ~~~~~~~~~~~~~~~~~~~~~~~^
+        method, url, fields=fields, headers=headers, **urlopen_kw
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\poolmanager.py", line 375, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<11 lines>...
+        **response_kw
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<11 lines>...
+        **response_kw
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 783, in urlopen
+    return self.urlopen(
+           ~~~~~~~~~~~~^
+        method,
+        ^^^^^^^
+    ...<11 lines>...
+        **response_kw
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+        method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "C:\Users\Ti-03\AppData\Roaming\Python\Python313\site-packages\urllib3\util\retry.py", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='localhost', port=59541): Max retries exceeded with url: /session/b6bcffe5057eab9a3503cb43290ecd3a/url (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000025FABA636B0>: Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente'))
+2025-06-11 10:22:25,089 - INFO - [main.py:445] - Rotina de limpeza da thread iniciada.
+2025-06-11 10:22:25,089 - INFO - [main.py:753] - Iniciando rotina de limpeza final...
+2025-06-11 10:22:25,089 - INFO - [main.py:800] - Pasta de certificados 'C:\Users\Ti-03\Desktop\Codigos\Atualizador Sieg\Atualizador Sieg (Versão Final)\certificados' não encontrada para limpeza.
+2025-06-11 10:22:45,498 - INFO - [main.py:762] - Navegador Chrome fechado com sucesso.
+2025-06-11 10:22:45,498 - INFO - [main.py:800] - Pasta de certificados 'C:\Users\Ti-03\Desktop\Codigos\Atualizador Sieg\Atualizador Sieg (Versão Final)\certificados' não encontrada para limpeza.
+2025-06-11 10:22:45,498 - INFO - [main.py:773] - Tentando finalizar processos 'chromedriver.exe' remanescentes...
+2025-06-11 10:22:45,547 - INFO - [main.py:779] - Comando para finalizar 'chromedriver.exe' executado.
+2025-06-11 10:22:45,547 - INFO - [main.py:783] - Rotina de limpeza final concluída.
+2025-06-11 10:22:45,547 - INFO - [main.py:448] - Thread de automação Selenium concluída.
+2025-06-11 10:22:45,547 - INFO - [main.py:815] - Atualizando UI após conclusão do processo.
+2025-06-11 10:22:45,549 - INFO - [main.py:843] - Processo finalizado sem nenhuma pendência registrada.
+2025-06-11 10:22:45,549 - ERROR - [main.py:864] - Processo finalizado. 0 de 1 empresa(s) com sucesso (0%).
+2025-06-11 10:27:41,794 - INFO - [main.py:877] - Aplicação encerrada.
+2025-06-11 10:27:41,795 - INFO - [main.py:911] - Script principal (__main__) finalizado.

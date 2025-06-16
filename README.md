@@ -34,7 +34,7 @@ Realiza o login na plataforma SIEG, navega até a página correta e submete as i
 
 O resultado é uma economia drástica de tempo e um aumento na precisão dos dados.
 
-✨ Funcionalidades
+## ✨ Funcionalidades
 Processamento em Lote: Atualize dezenas ou centenas de empresas de uma só vez.
 
 Interface Gráfica Simples: Uma UI clara e objetiva construída com CustomTkinter.

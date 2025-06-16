@@ -274,21 +274,21 @@ E --> G[Modo headless]
 
 # Domínio (SQL Server)
 
-str_conexao_dominio = "DSN=Dominio;UID=NEOSOLUTIONS;PWD=NEOSOLUTIONS"
+str_conexao_dominio = "suas_credenciais_para_conexao"
 
 # Gestão de Certificados (MySQL)
 
 config = {
 
-'user': 'root',
+'user': 'seu_usuario',
 
-'password': 'shadows2511',
+'password': 'sua_senha',
 
-'host': '192.168.40.206',
+'host': 'seu_host',
 
-'port': 3307,
+'port': sua_porta,
 
-'database': 'mafus_certificados'
+'database': 'sua_base_de_dados'
 
 }
 

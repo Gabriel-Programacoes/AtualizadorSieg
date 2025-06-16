@@ -1,130 +1,483 @@
-📋 Tabela de Conteúdos
-📌 Sobre o Projeto
+# Atualizador SIEG - Grupo Meta
 
-✨ Funcionalidades
+![Grupo Meta Logo](https://via.placeholder.com/150/77cc88/06070e?text=GM)
 
-🛠️ Tecnologias Utilizadas
+*(Substitua por um logo real, se tiver)*
 
-🚀 Começando
+Aplicação desktop para atualização de certificados digitais de empresas no sistema SIEG Hub.
 
-📋 Pré-requisitos
+---
 
-⚙️ Instalação
+## 📜 Descrição
 
-👨‍💻 Como Usar
+O Atualizador SIEG é uma aplicação desktop desenvolvida em Python que automatiza o processo de atualização de certificados digitais de empresas no sistema SIEG Hub. A ferramenta realiza:
 
-🏗️ Arquitetura do Projeto
+1. Conexão com bancos de dados para obtenção de informações das empresas
 
-🤝 Como Contribuir
+2. Download e gerenciamento de certificados digitais
 
-📄 Licença
+3. Automação web para cadastro/atualização no SIEG Hub
 
-📧 Contato
+4. Integração com o módulo IRIS
 
-📌 Sobre o Projeto
-O Atualizador SIEG foi desenvolvido para resolver um desafio comum em escritórios de contabilidade: a atualização manual e massiva de certificados digitais de empresas na plataforma SIEG. Este processo, quando feito manualmente, é repetitivo, demorado e propenso a erros.
+5. Gerenciamento de erros e relatórios detalhados
 
-Esta ferramenta automatiza completamente o fluxo de trabalho:
+---
 
-Busca os dados cadastrais da empresa em um banco Dominio.
+## ✨ Funcionalidades Principais
 
-Obtém o arquivo do certificado digital e sua senha de um banco MySQL.
+* **Interface gráfica moderna** com CustomTkinter
 
-Realiza o login na plataforma SIEG, navega até a página correta e submete as informações e o arquivo, tudo isso em lote e com mínima intervenção humana.
+* **Processamento em lote** de múltiplas empresas
 
-O resultado é uma economia drástica de tempo e um aumento na precisão dos dados.
+* **Conexão com múltiplos bancos de dados**:
 
-## ✨ Funcionalidades
-Processamento em Lote: Atualize dezenas ou centenas de empresas de uma só vez.
+- Domínio (via pyodbc)
 
-Interface Gráfica Simples: Uma UI clara e objetiva construída com CustomTkinter.
+- Gestão de Certificados (MySQL)
 
-Modo de Operação Flexível: Execute com o navegador visível (padrão) ou em modo headless (oculto) para maior performance.
+* **Download seguro de certificados** com validação:
 
-Logs e Relatórios: Geração de logs detalhados para depuração e relatórios de pendências ao final de cada execução.
+- Busca por CNPJ completo ou matriz
 
-Cancelamento Seguro: Interrompa o processo a qualquer momento sem corromper dados.
+- Verificação de validade
 
-🛠️ Tecnologias Utilizadas
-Este projeto foi construído com as seguintes tecnologias:
+- Armazenamento temporário seguro
 
-CustomTkinter: Para a interface gráfica.
+* **Automação web completa**:
 
-PyODBC: Para a conexão com o banco de dados Dominio.
+- Login automático no SIEG Hub
 
-🚀 Começando
-Para ter uma cópia local do projeto rodando, siga estes passos.
+- Upload de certificados
 
-📋 Pré-requisitos
-Python 3.10+ instalado.
+- Preenchimento inteligente de formulários
 
-Acesso de Rede aos servidores de banco de dados (MySQL e Dominio).
+- Atualização ou cadastro novo conforme necessário
 
-DSN ODBC configurado na máquina local com o nome Dominio para a conexão com o sistema Dominio.
+* **Integração com módulo IRIS**
 
-Sistema Operacional Windows.
+* **Sistema robusto de tratamento de erros**:
 
-⚙️ Instalação
-Clone o repositório:
+- Logs detalhados
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+- Screenshots de debug
 
-Crie e ative um ambiente virtual (altamente recomendado):
+- Relatório de empresas com problemas
 
-python -m venv venv
-.\venv\Scripts\activate
+* **Gerenciamento de progresso** com barra visual
 
-Instale as dependências a partir de requirements.txt:
+* **Modo headless** para execução invisível
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+* **Python 3.11+**
+
+* **Bibliotecas Principais**:
+
+- `customtkinter` - Interface gráfica moderna
+
+- `selenium` - Automação web
+
+- `mysql-connector-python` - Conexão com MySQL
+
+- `pyodbc` - Conexão com SQL Server
+
+- `Pillow` - Manipulação de imagens
+
+- `python-dotenv` - Gerenciamento de variáveis de ambiente
+
+* **Outras Dependências**:
+
+- `CTkMessagebox` - Caixas de diálogo estilizadas
+
+- `base64` - Codificação/decodificação de certificados
+
+- `logging` - Sistema de logs profissional
+
+- `threading` - Processamento assíncrono
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+
+atualizador-sieg/
+
+├── assets/                   # Recursos visuais
+
+│   └── frame0/               # Assets específicos da interface
+
+│       ├── cert.ico          # Ícone da aplicação
+
+│       ├── image_3.png       # Logo SIEG
+
+│       └── image_4.png       # Logo Grupo Meta
+
+├── chrome_standalone/        # Chrome e ChromeDriver empacotados
+
+│   ├── chrome.exe
+
+│   └── chromedriver.exe
+
+├── debug_screenshots/        # Screenshots de erros (gerado em runtime)
+
+├── certificados/             # Certificados temporários (gerado em runtime)
+
+├── banco.py                  # Funções de acesso a bancos de dados
+
+├── cadastro_IRIS.py          # Funções para cadastro no IRIS
+
+├── main.py                   # Ponto de entrada principal
+
+├── requirements.txt          # Dependências do projeto
+
+├── .env                      # Configurações sensíveis (não versionado)
+
+├── atualizador_sieg.log      # Log de execução (gerado em runtime)
+
+└── certificados_problemas.txt # Relatório de problemas (gerado em runtime)
+
+```
+
+---
+
+## 🏗️ Arquitetura e Design
+
+### Padrões de Projeto
+
+* **MVC (Model-View-Controller)**:
+
+- Model (banco.py, cadastro_IRIS.py)
+
+- View (customtkinter UI)
+
+- Controller (main.py)
+
+* **Singleton** para gerenciamento de conexões
+
+* **Factory Method** para criação de drivers do navegador
+
+### Princípios SOLID
+
+* **Single Responsibility**: Cada módulo/classe tem uma responsabilidade única
+
+* **Open/Closed**: Extensível para novos tipos de bancos de dados
+
+* **Dependency Inversion**: Dependências abstraídas via interfaces
+
+### Fluxo Principal
+
+```mermaid
+
+graph TD
+
+A[Início] --> B[Obter códigos de empresas]
+
+B --> C[Para cada empresa]
+
+C --> D[Buscar dados no Domínio]
+
+D --> E[Baixar certificado]
+
+E --> F[Automação SIEG Hub]
+
+F --> G{Novo cadastro?}
+
+G -->|Sim| H[Cadastrar no IRIS]
+
+G -->|Não| I[Atualizar certificado]
+
+H --> J[Relatório final]
+
+I --> J
+
+```
+
+---
+
+## ⚙️ Configuração e Execução
+
+### Pré-requisitos
+
+- Python 3.11+
+
+- Chrome instalado (ou usar versão standalone incluída)
+
+- Acesso aos bancos de dados:
+
+- Domínio (SQL Server)
+
+- Gestão de Certificados (MySQL)
+
+### Passo a Passo
+
+1. **Configurar variáveis de ambiente** (.env):
+
+```ini
+
+email=seu_email@sieg.com
+
+senha=sua_senha_sieg
+
+```
+
+2. **Instalar dependências**:
+
+```bash
 
 pip install -r requirements.txt
 
-Configure suas credenciais:
+```
 
-Crie um arquivo chamado .env na raiz do projeto.
+3. **Executar aplicação**:
 
-Adicione suas credenciais do SIEG neste arquivo:
-
-email=seu_email@dominio.com
-senha=sua_senha_aqui
-
-👨‍💻 Como Usar
-Execute a aplicação:
+```bash
 
 python main.py
 
-Na tela principal, insira os códigos das empresas no campo de texto, separados por vírgula, espaço ou quebra de linha. Alternativamente, clique em "Carregar Arquivo" para usar um .txt.
+```
 
-Escolha as configurações desejadas (Modo Headless, Timeout).
+4. **Interface de usuário**:
 
-Clique em "Iniciar Atualização" para começar.
+```mermaid
 
-Acompanhe o progresso na barra de status. Você pode clicar em "Cancelar Processo" a qualquer momento.
+graph LR
 
-Ao final, verifique a mensagem de resumo e o relatório de pendências, caso haja algum problema. Para detalhes técnicos, consulte o arquivo atualizador_sieg.log.
+A[Campo de códigos] --> B[Carregar arquivo]
 
-🏗️ Arquitetura do Projeto
-Uma visão geral da função dos principais arquivos do projeto:
+A --> C[Limpar campo]
 
-🤝 Como Contribuir
-Contribuições são o que tornam a comunidade de código aberto um lugar incrível para aprender, inspirar e criar. Qualquer contribuição que você fizer será muito apreciada.
+A --> D[Iniciar processamento]
 
-Se você tiver uma sugestão para melhorar este projeto, por favor, crie um "fork" do repositório e crie um "pull request". Você também pode simplesmente abrir uma "issue" com a tag "melhoria".
+E[Configurações] --> F[Timeout]
 
-Faça um Fork do Projeto
+E --> G[Modo headless]
 
-Crie sua Feature Branch (git checkout -b feature/AmazingFeature)
+```
 
-Faça o Commit de suas alterações (git commit -m 'Add some AmazingFeature')
+### Configurações Opcionais
 
-Faça o Push para a Branch (git push origin feature/AmazingFeature)
+- **Timeout**: Tempo de espera para elementos web (padrão: 30s)
 
-Abra um Pull Request
+- **Modo Headless**: Execução invisível do navegador (ativado por padrão)
 
-📄 Licença
-Distribuído sob a Licença MIT. Veja LICENSE.txt para mais informações.
+---
 
-📧 Contato
-Seu Nome - @seu_twitter - seu_email@exemplo.com
+## 🛠️ Funcionalidades Técnicas Detalhadas
 
-Link do Projeto: https://github.com/seu-usuario/seu-repositorio
+### Conexão com Bancos de Dados
+
+```python
+
+# Domínio (SQL Server)
+
+str_conexao_dominio = "DSN=Dominio;UID=NEOSOLUTIONS;PWD=NEOSOLUTIONS"
+
+# Gestão de Certificados (MySQL)
+
+config = {
+
+'user': 'root',
+
+'password': 'shadows2511',
+
+'host': '192.168.40.206',
+
+'port': 3307,
+
+'database': 'mafus_certificados'
+
+}
+
+```
+
+### Download de Certificados
+
+1. Busca por CNPJ completo
+
+2. Fallback para matriz (primeiros 8 dígitos + '0001')
+
+3. Validação de data de expiração
+
+4. Decodificação base64 e salvamento seguro
+
+### Automação Web
+
+```python
+
+def cadastrarIRIS(navegador, dadosEmpresa, caminho_PFX, senhaCertificado):
+
+# Fluxo completo de cadastro
+
+navegador.get('https://hub.sieg.com/IriS/#/Certificados')
+
+# ... interações com a página ...
+
+```
+
+### Tratamento de Erros
+
+- Exceções customizadas (`CertificadoNaoEncontradoError`)
+
+- Múltiplas camadas de try/except
+
+- Registro detalhado em log
+
+- Screenshots automáticos em falhas
+
+- Arquivos de relatório específicos
+
+### Segurança
+
+- Limpeza automática de certificados temporários
+
+- Gerenciamento seguro de credenciais (.env)
+
+- Validação de inputs do usuário
+
+---
+
+## 📊 Monitoramento e Logs
+
+### Sistema de Logging
+
+```python
+
+def setup_logger(self):
+
+self.logger = logging.getLogger(__name__)
+
+self.logger.setLevel(logging.DEBUG)
+
+# Configuração de handlers e formatters...
+
+```
+
+### Níveis de Log
+
+- DEBUG: Detalhes técnicos para desenvolvimento
+
+- INFO: Fluxo principal da aplicação
+
+- WARNING: Problemas recuperáveis
+
+- ERROR: Falhas operacionais
+
+- CRITICAL: Erros graves que impedem funcionamento
+
+### Relatórios Gerados
+
+1. `atualizador_sieg.log` - Log completo da execução
+
+2. `certificados_problemas.txt` - Empresas com certificados inválidos
+
+3. `certificado_não_encontrado.txt` - Certificados não localizados
+
+---
+
+## 🚨 Tratamento de Erros Comuns
+
+| Erro | Causa Provável | Solução |
+
+|------|----------------|---------|
+
+| `CertificadoNaoEncontradoError` | CNPJ não cadastrado | Verificar base de certificados |
+
+| `pyodbc.InterfaceError` | Problema na conexão com Domínio | Validar DSN e credenciais |
+
+| `selenium.TimeoutException` | Elemento web não encontrado | Aumentar timeout ou verificar seletor |
+
+| `WebDriverException` | Problema no ChromeDriver | Verificar compatibilidade de versões |
+
+| `FileNotFoundError` | Assets faltando | Verificar estrutura de diretórios |
+
+---
+
+## 🔮 Melhorias Futuras
+
+1. **Interface para configuração de conexões**:
+
+- Gerenciamento visual de strings de conexão
+
+- Teste de conectividade integrado
+
+2. **Suporte a outros bancos de dados**:
+
+- PostgreSQL
+
+- SQLite
+
+3. **Sistema de templates**:
+
+- Personalização de fluxos de trabalho
+
+- Configurações salvas por perfil
+
+4. **Monitoramento em tempo real**:
+
+- Dashboard de execução
+
+- Notificações por e-mail
+
+5. **Automação expandida**:
+
+- Suporte a outros módulos do SIEG
+
+- Integração com sistemas contábeis
+
+---
+
+## 👥 Contribuição
+
+1. Faça um fork do projeto
+
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
+
+3. Commit suas alterações (`git commit -am 'Adiciona nova feature'`)
+
+4. Push para a branch (`git push origin feature/nova-feature`)
+
+5. Abra um Pull Request
+
+**Padrões de Código**:
+
+- PEP 8
+
+- Docstrings completas
+
+- Type hints
+
+---
+
+## 📄 Licença
+
+Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+
+```
+
+### Destaques da Formatação:
+
+1. **Emojis**: Utilizamos emojis nos títulos para melhor visualização
+
+2. **Badges**: Pode adicionar badges no topo (ex: versão, status, licença)
+
+3. **Diagramas Mermaid**: Fluxos de processo e arquitetura em diagramas
+
+4. **Destacadores de Código**: Blocos de código com syntax highlighting
+
+5. **Tabelas**: Para tratamento de erros comuns
+
+6. **Listas Hierárquicas**: Estrutura de diretórios e funcionalidades
+
+Para adicionar badges, você pode usar serviços como shields.io. Exemplo:
+
+```markdown
+
+[![Python Version](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org/)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+```

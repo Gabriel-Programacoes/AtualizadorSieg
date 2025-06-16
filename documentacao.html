@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação - Atualizador SIEG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .section-card {
+            background-color: #1a202c; /* bg-gray-900 */
+            border: 1px solid #2d3748; /* border-gray-700 */
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease-in-out;
+        }
+        .code-block {
+            background-color: #0d1117;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            position: relative;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: #2d3748;
+            color: #a0aec0;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: background-color 0.2s;
+        }
+        .copy-btn:hover {
+            background-color: #4a5568;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <div class="flex min-h-screen">
+        <!-- Barra de Navegação Lateral -->
+        <aside class="w-64 bg-gray-900 border-r border-gray-800 p-6 sticky top-0 h-screen hidden lg:block">
+            <div class="flex items-center gap-3 mb-8">
+                 <svg class="h-8 w-8 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h2 class="text-xl font-bold text-white">Atualizador SIEG</h2>
+            </div>
+            <nav id="nav-menu">
+                <a href="#descricao" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-800 text-gray-400 hover:text-white">Descrição</a>
+                <a href="#tecnologias" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-800 text-gray-400 hover:text-white">Tecnologias</a>
+                <a href="#funcionalidades" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-800 text-gray-400 hover:text-white">Funcionalidades</a>
+                <a href="#estrutura" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-800 text-gray-400 hover:text-white">Estrutura</a>
+                <a href="#configuracao" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-800 text-gray-400 hover:text-white">Configuração</a>
+                <a href="#executar" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-800 text-gray-400 hover:text-white">Como Executar</a>
+                <a href="#interface" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-800 text-gray-400 hover:text-white">Interface Gráfica</a>
+                <a href="#erros" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-800 text-gray-400 hover:text-white">Tratamento de Erros</a>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="flex-1 p-6 lg:p-10">
+
+            <header class="mb-12">
+                <h1 class="text-4xl font-extrabold text-white mb-2">Documentação da Aplicação</h1>
+                <p class="text-lg text-gray-400">Um guia completo para a aplicação de automação Atualizador SIEG.</p>
+            </header>
+            
+            <div id="content">
+                <!-- Seção Descrição -->
+                <section id="descricao" class="section-card">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-l-4 border-blue-400 pl-4">Descrição</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        Este projeto é uma aplicação de desktop para Windows que automatiza o processo de atualização e cadastro de certificados digitais de empresas na plataforma web da SIEG. A ferramenta foi projetada para otimizar rotinas contábeis, eliminando a necessidade de processos manuais repetitivos. Ela se conecta a bancos de dados legados para obter as informações necessárias e interage com a interface web da SIEG através de automação com Selenium.
+                    </p>
+                </section>
+
+                <!-- Seção Tecnologias -->
+                <section id="tecnologias" class="section-card">
+                    <h2 class="text-2xl font-bold text-white mb-6 border-l-4 border-blue-400 pl-4">Tecnologias Utilizadas</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div class="bg-gray-800 p-4 rounded-lg text-center"><span class="font-bold text-white">Linguagem:</span> Python 3.10+</div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center"><span class="font-bold text-white">UI:</span> CustomTkinter</div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center"><span class="font-bold text-white">Automação:</span> Selenium 4.x</div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center"><span class="font-bold text-white">Banco de Dados:</span> MySQL</div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center"><span class="font-bold text-white">Banco de Dados:</span> ODBC (Dominio)</div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center"><span class="font-bold text-white">Config:</span> python-dotenv</div>
+                    </div>
+                </section>
+
+                <!-- Seção Funcionalidades -->
+                <section id="funcionalidades" class="section-card">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-l-4 border-blue-400 pl-4">Funcionalidades Principais</h2>
+                    <ul class="space-y-3 text-gray-400 list-disc list-inside">
+                        <li><strong class="text-gray-200">Automação de Login:</strong> Utiliza credenciais de um arquivo `.env` para autenticar na plataforma SIEG.</li>
+                        <li><strong class="text-gray-200">Processamento em Lote:</strong> Processa múltiplos códigos de empresa de uma só vez, carregados via UI ou arquivo de texto.</li>
+                        <li><strong class="text-gray-200">Integração de Dados:</strong> Busca dados cadastrais do sistema Dominio e certificados/senhas de um banco MySQL.</li>
+                        <li><strong class="text-gray-200">Gerenciamento de Certificados:</strong> Lida com os fluxos de novo cadastro e de atualização de certificados existentes.</li>
+                        <li><strong class="text-gray-200">Controle do Usuário:</strong> Permite a execução em modo `headless` (oculto) e o cancelamento seguro do processo a qualquer momento.</li>
+                        <li><strong class="text-gray-200">Logging e Relatórios:</strong> Gera logs detalhados e exibe um relatório de pendências ao final da execução.</li>
+                    </ul>
+                </section>
+
+                <!-- Seção Estrutura -->
+                <section id="estrutura" class="section-card">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-l-4 border-blue-400 pl-4">Estrutura do Projeto</h2>
+                    <p class="text-gray-400 mb-4">O projeto segue uma estrutura modular para separar as responsabilidades:</p>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                        <pre><code class="language-bash">
+/AtualizadorSieg/
+├── main.py             # Classe principal da aplicação (UI e orquestração)
+├── banco.py              # Módulo de acesso aos bancos de dados
+├── cadastro_IRIS.py      # Módulo específico para a automação da seção "IRIS"
+├── assets/               # Ícones e imagens da interface
+├── chrome_standalone/    # Chrome e ChromeDriver para portabilidade
+├── debug_screenshots/    # Screenshots de erros de login
+├── .env                  # Arquivo de configuração de credenciais (não versionado)
+├── requirements.txt      # Lista de dependências Python
+└── atualizador_sieg.log  # Arquivo de log da aplicação
+                        </code></pre>
+                    </div>
+                </section>
+                
+                <!-- Seção Configuração -->
+                <section id="configuracao" class="section-card">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-l-4 border-blue-400 pl-4">Configuração</h2>
+                     <p class="text-gray-400 mb-4">As principais configurações são gerenciadas através de arquivos e do sistema:</p>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-semibold text-lg text-white">1. Credenciais SIEG</h3>
+                            <p class="text-gray-400">Crie um arquivo <code class="bg-gray-800 text-sm font-mono p-1 rounded">.env</code> na raiz do projeto com o seguinte conteúdo:</p>
+                             <div class="code-block mt-2">
+                                <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                                <pre><code class="language-bash">
+email=seu_email@sieg.com
+senha=sua_senha
+                                </code></pre>
+                            </div>
+                        </div>
+                         <div>
+                            <h3 class="font-semibold text-lg text-white">2. Conexão Dominio (ODBC)</h3>
+                            <p class="text-gray-400">Requer um DSN (Data Source Name) do ODBC configurado no Windows com o nome exato <code class="bg-gray-800 text-sm font-mono p-1 rounded">Dominio</code>.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-white">3. Conexão MySQL</h3>
+                            <p class="text-gray-400">As credenciais de conexão estão definidas diretamente no arquivo <code class="bg-gray-800 text-sm font-mono p-1 rounded">banco.py</code>. Para produção, é recomendado externalizá-las.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Seção Como Executar -->
+                <section id="executar" class="section-card">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-l-4 border-blue-400 pl-4">Como Executar</h2>
+                    <ol class="list-decimal list-inside space-y-3 text-gray-400">
+                       <li>**Pré-requisitos:** Python 3.10+ e um DSN ODBC `Dominio` configurado no Windows.</li>
+                       <li>**Clone o repositório:**
+                           <div class="code-block my-2">
+                               <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                               <pre><code class="language-bash">git clone &lt;url_do_repositorio&gt;</code></pre>
+                           </div>
+                       </li>
+                       <li>**Instale as dependências:**
+                            <div class="code-block my-2">
+                               <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                               <pre><code class="language-bash">pip install -r requirements.txt</code></pre>
+                           </div>
+                       </li>
+                       <li>Crie e configure o arquivo <code class="bg-gray-800 text-sm font-mono p-1 rounded">.env</code> com suas credenciais.</li>
+                       <li>**Execute a aplicação:**
+                            <div class="code-block my-2">
+                               <button class="copy-btn" onclick="copyCode(this)">Copiar</button>
+                               <pre><code class="language-bash">python main.py</code></pre>
+                           </div>
+                       </li>
+                    </ol>
+                </section>
+
+                <!-- Seção Interface Gráfica -->
+                <section id="interface" class="section-card">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-l-4 border-blue-400 pl-4">Guia da Interface Gráfica</h2>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-gray-800 rounded-lg">
+                            <thead class="bg-gray-700">
+                                <tr>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm text-white">Componente</th>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm text-white">Função</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-400">
+                                <tr>
+                                    <td class="py-3 px-4 border-b border-gray-700 font-semibold">Campo de Texto Principal</td>
+                                    <td class="py-3 px-4 border-b border-gray-700">Insira os códigos das empresas, separados por vírgula, espaço ou quebra de linha.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 border-b border-gray-700 font-semibold">Botão "Carregar Arquivo"</td>
+                                    <td class="py-3 px-4 border-b border-gray-700">Abre uma janela para selecionar um arquivo `.txt` ou `.csv`.</td>
+                                </tr>
+                                 <tr>
+                                    <td class="py-3 px-4 border-b border-gray-700 font-semibold">Botão "Iniciar Atualização"</td>
+                                    <td class="py-3 px-4 border-b border-gray-700">Inicia a automação. Durante a execução, muda para "Cancelar Processo".</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 border-b border-gray-700 font-semibold">Switch "Modo Headless"</td>
+                                    <td class="py-3 px-4 border-b border-gray-700">Ative para executar a automação em segundo plano (sem interface do navegador).</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-semibold">Barra de Progresso</td>
+                                    <td class="py-3 px-4">Mostra o andamento do processo em tempo real.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Seção Tratamento de Erros -->
+                <section id="erros" class="section-card">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-l-4 border-blue-400 pl-4">Tratamento de Erros</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        A aplicação é construída com um robusto sistema de tratamento de erros. Exceções de banco de dados, Selenium e outras são capturadas de forma granular. Todos os erros críticos e avisos são registrados no arquivo <code class="bg-gray-800 text-sm font-mono p-1 rounded">atualizador_sieg.log</code> com `tracebacks` completos. Erros previsíveis (ex: "Certificado não encontrado") são tratados de forma controlada, permitindo que o processo continue com as outras empresas e exibindo um relatório de pendências ao final.
+                    </p>
+                </section>
+            </div>
+
+            <footer class="text-center mt-12 py-6 border-t border-gray-800">
+                <p class="text-gray-500">Documentação gerada para o projeto Atualizador SIEG.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        // Função para copiar conteúdo de blocos de código
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling;
+            const text = codeBlock.innerText;
+            
+            // Usando document.execCommand como fallback para o ambiente de iframe
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                button.innerText = 'Copiado!';
+                setTimeout(() => {
+                    button.innerText = 'Copiar';
+                }, 2000);
+            } catch (err) {
+                console.error('Falha ao copiar texto: ', err);
+                button.innerText = 'Erro!';
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // Highlight da navegação ativa ao rolar
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('#nav-menu a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('bg-gray-800', 'text-white');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('bg-gray-800', 'text-white');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
